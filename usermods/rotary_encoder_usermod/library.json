@@ -1,0 +1,15 @@
+{
+  "name": "rotary_encoder_usermod",
+  "version": "1.0.0",
+  "description": "Rotary encoder usermod for WLED preset control with audio",
+  "keywords": "wled, usermod, rotary, encoder, dfplayer",
+  "authors": {
+    "name": "WLED User"
+  },
+  "dependencies": {
+    "madhephaestus/ESP32Encoder": "^0.10.2"
+  },
+  "build": {
+    "libArchive": false
+  }
+}
