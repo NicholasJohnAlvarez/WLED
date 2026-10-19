@@ -1,0 +1,20 @@
+# Edit the IP, user and flags, then:
+#   sudo cp wled-tetris.service /etc/systemd/system/
+#   sudo systemctl enable --now wled-tetris
+[Unit]
+Description=WLED matrix Tetris
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=pi
+SupplementaryGroups=input
+WorkingDirectory=/home/pi/pi_tetris
+ExecStart=/usr/bin/python3 /home/pi/pi_tetris/run.py --host 192.168.1.50 --panel 48x32 --fps 60
+Restart=always
+RestartSec=3
+Nice=-5
+
+[Install]
+WantedBy=multi-user.target
